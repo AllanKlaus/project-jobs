@@ -20,6 +20,8 @@ feature 'User do CRUD on categories' do
     )
     visit new_category_path
 
+    expect(page).to have_content 'Create Category'
+
     fill_in 'category[name]', with: category.name
 
     click_on 'submit'
@@ -36,6 +38,8 @@ feature 'User do CRUD on categories' do
 
     visit edit_category_path(category)
 
+    expect(page).to have_content 'Edit Category'
+
     fill_in 'category[name]', with: category.name
 
     click_on 'submit'
@@ -45,7 +49,7 @@ feature 'User do CRUD on categories' do
 
   scenario 'user try to create an invalid category' do
     login_user
-    
+
     visit new_category_path
 
     click_on 'submit'

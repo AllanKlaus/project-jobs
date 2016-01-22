@@ -1,1 +1,9 @@
-<%= render @company %>
+<div class="row">
+  <aside class="col-sm-4">
+    <%= render @company %>
+  </aside>
+  <section class="col-sm-8">
+    <h1>Jobs</h1>
+    <%= render @company.jobs %>
+  </section>
+</div>

@@ -25,6 +25,8 @@ feature 'User do CRUD on jobs' do
 
     visit new_job_path
 
+    expect(page).to have_content 'Create Job'
+
     fill_in 'job[title]', with: job.title
     fill_in 'job[location]', with: job.location
     fill_in 'job[description]', with: job.description
@@ -48,6 +50,8 @@ feature 'User do CRUD on jobs' do
     job = create_job(company, category)
 
     visit edit_job_path(job)
+
+    expect(page).to have_content 'Edit Job'
 
     fill_in 'job[title]', with: job.title
     fill_in 'job[location]', with: job.location

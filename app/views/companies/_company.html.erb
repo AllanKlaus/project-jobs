@@ -1,8 +1,8 @@
-<div class="company">
+<div class="col-sm-4 text-center">
+  <p><%= image_tag company.photo.url(:thumb) %></p>
   <p><%= company.name %></p>
   <p><%= company.location %></p>
   <p><%= company.mail %></p>
   <p><%= company.phone %></p>
-  <p><%= image_tag company.photo.url(:thumb) %></p>
   <p><%= link_to "See more", company %></p>
 </div>

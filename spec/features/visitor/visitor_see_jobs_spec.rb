@@ -14,6 +14,18 @@ feature 'Visitor visits home' do
   end
 
   scenario 'see job page' do
+    5.times do |number|
+      create_job(nil, nil, number)
+    end
+
+    visit jobs_path
+
+    5.times do |number|
+      create_job(nil, nil, number)
+    end
+  end
+
+  scenario 'see job page' do
     job = create_job(nil, nil, 10)
 
     visit job_path(job)
@@ -22,7 +34,6 @@ feature 'Visitor visits home' do
     expect(page).to have_content job.location
     expect(page).to have_content job.category.name
     expect(page).to have_content job.company.name
-    expect(page).to have_content job.description
   end
 
   scenario 'see job on company page' do
@@ -40,7 +51,7 @@ feature 'Visitor visits home' do
   end
 
   scenario 'see job on category page' do
-    category = create_company(5)
+    category = create_category(5)
     job = create_job(nil, category, 10)
 
     visit category_path(category)

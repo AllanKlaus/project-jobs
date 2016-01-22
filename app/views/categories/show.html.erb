@@ -1,1 +1,9 @@
-<%= render @category %>
+<div class="row">
+  <aside class="col-sm-4">
+    <%= render @category %>
+  </aside>
+  <section class="col-sm-8">
+    <h1>Jobs</h1>
+    <%= render @category.jobs %>
+  </section>
+</div>

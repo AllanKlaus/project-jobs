@@ -32,6 +32,8 @@ feature 'User do CRUD on companies' do
     )
     visit new_company_path
 
+    expect(page).to have_content 'Create Company'
+
     fill_in 'company[name]', with: company.name
     fill_in 'company[location]', with: company.location
     fill_in 'company[mail]', with: company.mail
@@ -57,7 +59,7 @@ feature 'User do CRUD on companies' do
 
     visit edit_company_path(company)
 
-    # puts page.html
+    expect(page).to have_content 'Edit Company'
 
     fill_in 'company[name]', with: company.name
     fill_in 'company[location]', with: company.location
@@ -74,7 +76,7 @@ feature 'User do CRUD on companies' do
 
   scenario 'user try to create an invalid company' do
     login_user
-    
+
     visit new_company_path
 
     click_on 'submit'

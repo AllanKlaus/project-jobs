@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
   before_action :get_category, only: [:show, :edit, :update]
 
   def index
-    @companies = Category.all
+    @categories = Category.all
   end
 
   def show
