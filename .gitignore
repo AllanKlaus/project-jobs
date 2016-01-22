@@ -17,3 +17,5 @@
 /tmp
 
 coverage/
+
+spec/features/visitor/visitor_search_jobs_spec.rb
