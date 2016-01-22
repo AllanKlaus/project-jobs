@@ -1,2 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.company{min-height: 300px; border-radius:20px;}
+.company:hover{background-color:#ccc;}
+
+.job{float: left; min-height: 300px; padding: 15px; width: 30%; box-sizing: border-box; margin:5px auto; text-align: center;}
