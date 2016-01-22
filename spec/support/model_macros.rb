@@ -21,6 +21,17 @@ module ModelsMacros
     )
   end
 
+  def login_user
+    user = create_user
+
+    visit new_user_session_path
+
+    fill_in 'user[email]', with: user.email
+    fill_in 'user[password]', with: set_password
+
+    click_on 'Log in'
+  end
+
   def create_user
     User.create(
     email: 'admin@user.com',

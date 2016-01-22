@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-feature 'User access blocked contents' do
-  scenario 'user unlogged access new jobs' do
+feature 'User access blocked jobs options' do
+  scenario 'user unlogged access new job' do
     create_job
     visit new_job_path
 

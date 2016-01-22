@@ -17,14 +17,7 @@ feature 'User do CRUD on jobs' do
   end
 
   scenario 'user create jobs' do
-    user = create_user
-
-    visit new_user_session_path
-
-    fill_in 'user[email]', with: user.email
-    fill_in 'user[password]', with: set_password
-
-    click_on 'Log in'
+    login_user
 
     category = create_category(1)
     company = create_company(10)
@@ -48,14 +41,7 @@ feature 'User do CRUD on jobs' do
   end
 
   scenario 'user update job' do
-    user = create_user
-
-    visit new_user_session_path
-
-    fill_in 'user[email]', with: user.email
-    fill_in 'user[password]', with: set_password
-
-    click_on 'Log in'
+    login_user
 
     category = create_category(5)
     company = create_company(10)
@@ -79,15 +65,8 @@ feature 'User do CRUD on jobs' do
   end
 
   scenario 'user try to create an invalid job' do
-    user = create_user
+    login_user
 
-    visit new_user_session_path
-
-    fill_in 'user[email]', with: user.email
-    fill_in 'user[password]', with: set_password
-
-    click_on 'Log in'
-    
     visit new_job_path
 
     click_on 'submit'

@@ -22,6 +22,8 @@ feature 'User do CRUD on companies' do
   end
 
   scenario 'user create companies' do
+    login_user
+
     company = Company.create(
     name: "Creating Company",
     location: 'Guarujá',
@@ -44,6 +46,8 @@ feature 'User do CRUD on companies' do
   end
 
   scenario 'user update company' do
+    login_user
+
     company = Company.create(
     name: "Creating Company",
     location: 'Guarujá',
@@ -69,6 +73,8 @@ feature 'User do CRUD on companies' do
   end
 
   scenario 'user try to create an invalid company' do
+    login_user
+    
     visit new_company_path
 
     click_on 'submit'

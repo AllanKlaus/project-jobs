@@ -1,5 +1,7 @@
 class CategoriesController < ApplicationController
   before_action :get_category, only: [:show, :edit, :update]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update]
+  
   def index
     @companies = Category.all
   end

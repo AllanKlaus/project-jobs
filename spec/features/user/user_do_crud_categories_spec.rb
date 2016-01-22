@@ -13,6 +13,8 @@ feature 'User do CRUD on categories' do
   end
 
   scenario 'user create categories' do
+    login_user
+
     category = Category.create(
     name: "Creating Category"
     )
@@ -26,6 +28,8 @@ feature 'User do CRUD on categories' do
   end
 
   scenario 'user update category' do
+    login_user
+
     category = Category.create(
     name: "Creating Category"
     )
@@ -40,6 +44,8 @@ feature 'User do CRUD on categories' do
   end
 
   scenario 'user try to create an invalid category' do
+    login_user
+    
     visit new_category_path
 
     click_on 'submit'
