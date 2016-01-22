@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Visitor visits home' do
+feature 'Visitor see jobs' do
   scenario 'see jobs on home' do
     5.times do |number|
       create_job(nil, nil, number)
@@ -21,7 +21,7 @@ feature 'Visitor visits home' do
     visit jobs_path
 
     5.times do |number|
-      create_job(nil, nil, number)
+      expect(page).to have_content "Macro Job #{number}"
     end
   end
 
