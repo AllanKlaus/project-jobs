@@ -17,8 +17,8 @@ feature 'User do CRUD on jobs' do
   end
 
   scenario 'user create jobs' do
-    category = create_category
-    company = create_company
+    category = create_category(1)
+    company = create_company(10)
     job = create_job
 
     visit new_job_path
@@ -26,9 +26,8 @@ feature 'User do CRUD on jobs' do
     fill_in 'job[title]', with: job.title
     fill_in 'job[location]', with: job.location
     fill_in 'job[description]', with: job.description
-    select company.name, from: 'job|company_id|'
-    select category.name, from: 'job|category_id|'
-
+    select company.name, from: 'job[company_id]'
+    select category.name, from: 'job[category_id]'
 
     click_on 'submit'
 
@@ -40,19 +39,17 @@ feature 'User do CRUD on jobs' do
   end
 
   scenario 'user update job' do
-    category = create_category
-    company = create_company
+    category = create_category(5)
+    company = create_company(10)
     job = create_job(company, category)
 
     visit edit_job_path(job)
 
-    # puts page.html
-
     fill_in 'job[title]', with: job.title
     fill_in 'job[location]', with: job.location
     fill_in 'job[description]', with: job.description
-    select company.name, from: 'job|company_id|'
-    select category.name, from: 'job|category_id|'
+    select company.name, from: 'job[company_id]'
+    select category.name, from: 'job[category_id]'
 
     click_on 'submit'
 
