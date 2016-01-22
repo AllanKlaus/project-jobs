@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.2.4'
-gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -18,13 +17,16 @@ gem "paperclip", "~> 4.3"
 gem 'bootstrap-sass', '~> 3.3.6'
 
 group :development, :test do
+  gem 'sqlite3'
+  gem 'byebug',      '3.4.0'
+  gem 'web-console'
+  gem 'spring',      '1.1.3'
   gem 'rspec-rails'
   gem 'simplecov', require: false
   gem 'capybara'
-  gem 'byebug'
 end
 
-group :development do
-  gem 'web-console', '~> 2.0'
-  gem 'spring'
+group :production do
+  gem 'pg',             '0.17.1'
+  gem 'rails_12factor', '0.0.2'
 end
