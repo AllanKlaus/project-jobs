@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-feature 'User do CRUD on companies' do
-  scenario 'user read companies' do
+feature 'User do CRUD on categories' do
+  scenario 'user read categories' do
 
     category = Category.create(
     name: "Reading Category"
@@ -12,7 +12,7 @@ feature 'User do CRUD on companies' do
     expect(page).to have_content "Reading Category"
   end
 
-  scenario 'user create companies' do
+  scenario 'user create categories' do
     category = Category.create(
     name: "Creating Category"
     )
@@ -26,7 +26,7 @@ feature 'User do CRUD on companies' do
   end
 
   scenario 'user update category' do
-    category = Category.new(
+    category = Category.create(
     name: "Creating Category"
     )
 
