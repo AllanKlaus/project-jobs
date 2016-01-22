@@ -1,5 +1,5 @@
 #Project Find Jobs
-I'm learning Tuby on Rails and this is my first project.
+I'm learning Ruby on Rails and this is my first project.
 
 It's a website that any user logged user can create and edit jobs
 

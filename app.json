@@ -1,0 +1,7 @@
+{
+  "name": "Project Find Jobs",
+  "description": "I'm learning Ruby on Rails and this is my first project.",
+  "image": "heroku/ruby",
+  "repository": "https://github.com/heroku/ruby-getting-started",
+  "keywords": ["ruby", "rails" ]
+}
