@@ -1,5 +1,5 @@
 <span class="error_message"><%= flash[:warning] %></span>
-<%= form_for @company do |f| %>
+<%= form_for @company, html: {multipart: true} do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.label :location %>
@@ -8,5 +8,7 @@
   <%= f.text_field :mail %>
   <%= f.label :phone %>
   <%= f.text_field :phone %>
+  <%= f.label :photo %>
+  <%= f.file_field :photo %>
   <%= f.submit "Send", id: 'submit' %>
 <% end %>

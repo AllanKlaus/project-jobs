@@ -1,7 +1,13 @@
 class CompaniesController < ApplicationController
-  before_action :get_company, only: [:show, :edit, :update]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
-  
+  before_action :get_company, only: [:show, :edit, :update]
+
+  # has_attached_file :photo, styles: {
+  #   medium: "300x300>",
+  #   thumb: "100x100>",
+  #   original: "600x600>"
+  # }
+
   def index
     @companies = Company.all
   end
@@ -39,7 +45,7 @@ class CompaniesController < ApplicationController
 
   private
   def companies_params
-    params.require(:company).permit(:name, :location, :mail, :phone)
+    params.require(:company).permit(:name, :location, :mail, :phone, :photo)
   end
 
   def get_company

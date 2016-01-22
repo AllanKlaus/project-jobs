@@ -3,5 +3,6 @@
   <p><%= company.location %></p>
   <p><%= company.mail %></p>
   <p><%= company.phone %></p>
+  <p><%= image_tag company.photo.url(:thumb) %></p>
   <p><%= link_to "See more", company %></p>
 </div>
