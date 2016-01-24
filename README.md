@@ -12,8 +12,9 @@ Gems used on project
 Things I'm planning to do
 - Tests to check validation on forms
 - Expire jobs that not was updated in 90 days
-- Search on Jobs
+- Search on Jobs - OK
 - When user is logger show option to edit jobs, categories and companies when it is showing. Ex.: job_path(job)
+- Order Jobs from las to first - OK
 
 Doubts I had during the project
 - 1- How to DRY on Rspec, using methods of Rspec
