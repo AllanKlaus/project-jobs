@@ -5,7 +5,7 @@ describe "#recent?" do
   context "created now" do
     it "is recent" do
       job = create_job
-      expect(job).to_not be_recent
+      expect(job).to_not be_expired
     end
   end
 
@@ -15,7 +15,7 @@ describe "#recent?" do
       travel_to 5.days.ago do
         job = create_job
       end
-      expect(job).to_not be_recent
+      expect(job).to_not be_expired
     end
   end
 

@@ -151,6 +151,10 @@
         1,
         1,
         1,
+        null,
+        1,
+        6,
+        null,
         null
       ],
       "/home/ubuntu/Documents/workspace/rails/project-jobs/app/controllers/jobs_controller.rb": [
@@ -231,6 +235,6 @@
         null
       ]
     },
-    "timestamp": 1453639367
+    "timestamp": 1453639699
   }
 }
