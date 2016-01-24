@@ -58,6 +58,14 @@ feature 'Visitor not see expired jobs' do
   end
 
   scenario 'on job not expired page' do
+    job = create_job(nil, nil, 100)
+
+    visit job_path(job)
+
+    expect(page).to_not have_content "Job Expired"
+  end
+
+  scenario 'on job expired page' do
     job = nil
     travel_to 100.days.ago do
       job = create_job(nil, nil, 100)

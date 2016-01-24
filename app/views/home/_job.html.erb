@@ -1,7 +1,9 @@
 <div class="job">
-  <h2><%= job.title %></h2>
-  <p>Company: <%= link_to job.company.name, job.company %></p>
-  <p>Category: <%= link_to job.category.name, job.category %></p>
-  <p>Location: <%= job.location %></p>
-  <p><%= link_to "See more", job, class: 'btn btn-primary' %></p>
+  <% if !job.expired? %>
+    <h2><%= job.title %></h2>
+    <p>Company: <%= link_to job.company.name, job.company %></p>
+    <p>Category: <%= link_to job.category.name, job.category %></p>
+    <p>Location: <%= job.location %></p>
+    <p><%= link_to "See more", job, class: 'btn btn-primary' %></p>
+  <% end %>
 </div>

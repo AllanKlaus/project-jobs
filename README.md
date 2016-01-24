@@ -16,6 +16,9 @@ Things I'm planning to do
 - When user is logger show option to edit jobs, categories and companies when it is showing. Ex.: job_path(job)
 - Order Jobs from las to first - OK
 
+Could do better at the end of the Project
+- On "remove" expired jobs from views SHOULD use where on controller to get only not expired, SQLITE don't have a function like ADDATE (MySQL) to filter it on where.
+
 Doubts I had during the project
 - 1- How to DRY on Rspec, using methods of Rspec
 - 2- Locals var in render isn't passing on companies_path, company_path, categories_path, category_path (commented on code)

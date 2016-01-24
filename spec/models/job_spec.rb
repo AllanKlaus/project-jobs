@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "#recent?" do
+describe "#expired?" do
 
   context "created now" do
     it "is recent" do
