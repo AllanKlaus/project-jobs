@@ -8,11 +8,11 @@ feature 'Visitor see jobs from last to first' do
 
     visit root_path
 
-    within first('div.opinion') do
-      expect(page).to have_content('Macro Job 5')
+    within first('div.job') do
+      expect(page).to have_content('Macro Job 4')
     end
 
-    within first('div.opinion') do
+    within first('div.job:last-child') do
       expect(page).to have_content('Macro Job 0')
     end
   end
@@ -24,11 +24,11 @@ feature 'Visitor see jobs from last to first' do
 
     visit jobs_path
 
-    within first('div.opinion') do
-      expect(page).to have_content('Macro Job 5')
+    within first('div.job') do
+      expect(page).to have_content('Macro Job 4')
     end
 
-    within first('div.opinion') do
+    within first('div.job:last-child') do
       expect(page).to have_content('Macro Job 0')
     end
   end

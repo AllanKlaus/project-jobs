@@ -6,7 +6,7 @@ class JobsController < ApplicationController
   skip_before_filter :verify_authenticity_token, only: [:search]
 
   def index
-    @jobs = Job.all
+    @jobs = Job.order(updated_at: :desc).all
   end
 
   def show
