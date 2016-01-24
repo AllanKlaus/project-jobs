@@ -3,7 +3,7 @@ class JobsController < ApplicationController
   before_action :get_job, only: [:show, :edit, :update]
   before_action :get_references, only: [:new, :create, :edit, :update]
 
-  # skip_before_filter :verify_authenticity_token, only: [:search]
+  skip_before_filter :verify_authenticity_token, only: [:search]
 
   def index
     @jobs = Job.all
@@ -41,7 +41,7 @@ class JobsController < ApplicationController
   end
 
   def search
-    @jobs = Job.where("title LIKE ?", jobs_params_search)
+    @jobs = Job.where("title LIKE ?", "%#{params[:title]}%")
     render :index
   end
 
@@ -51,7 +51,7 @@ class JobsController < ApplicationController
   end
 
   def jobs_params_search
-    params.require(:job).permit(:search)
+    params.require(:job).permit(:title)
   end
 
   def get_job

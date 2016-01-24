@@ -1,6 +1,8 @@
 <div class="row">
   <aside class="col-sm-4">
     <h2>Side Menu</h2>
+    <h3>Search</h3>
+    <%=render 'search' %>
     <h3>Categories</h3>
     <%= render partial: "side_menu", collection: @categories, as: :item %>
     <h3>Companies</h3>
