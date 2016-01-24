@@ -5,6 +5,11 @@
     <p>Category: <%= link_to job.category.name, job.category %></p>
     <p>Location: <%= job.location %></p>
     <p>Description: <br /><%= job.description %></p>
-    <p><%= link_to "See more", job, class: 'btn btn-primary' %></p>
+    <p>
+      <%= link_to "See more", job, class: 'btn btn-primary' %>
+      <% if user_signed_in? %>
+        <%= link_to "Edit", edit_job_path(job), class: 'btn btn-primary' %>
+      <% end %>
+    </p>
   <% end %>
 </div>
