@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-01-24T05:57:22-08:00">2016-01-24T05:57:22-08:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-01-24T06:13:20-08:00">2016-01-24T06:13:20-08:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         3.27
+         3.65
        </span>
     </span> hits/line)
   </h2>
@@ -87,7 +87,7 @@
         <td>5</td>
         <td>5</td>
         <td>0</td>
-        <td>16.0</td>
+        <td>19.0</td>
       </tr>
       
       <tr>
@@ -97,7 +97,7 @@
         <td>37</td>
         <td>34</td>
         <td>3</td>
-        <td>2.4</td>
+        <td>2.5</td>
       </tr>
       
       <tr>
@@ -107,7 +107,7 @@
         <td>3</td>
         <td>3</td>
         <td>0</td>
-        <td>9.3</td>
+        <td>11.0</td>
       </tr>
       
       <tr>
@@ -137,7 +137,7 @@
         <td>7</td>
         <td>7</td>
         <td>0</td>
-        <td>11.0</td>
+        <td>14.1</td>
       </tr>
       
       <tr>
@@ -163,7 +163,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         2.76
+         2.95
        </span>
     </span> hits/line)
   </h2>
@@ -225,7 +225,7 @@
         <td>5</td>
         <td>5</td>
         <td>0</td>
-        <td>16.0</td>
+        <td>19.0</td>
       </tr>
       
       <tr>
@@ -235,7 +235,7 @@
         <td>37</td>
         <td>34</td>
         <td>3</td>
-        <td>2.4</td>
+        <td>2.5</td>
       </tr>
       
     </tbody>
@@ -250,7 +250,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         5.12
+         6.39
        </span>
     </span> hits/line)
   </h2>
@@ -302,7 +302,7 @@
         <td>7</td>
         <td>7</td>
         <td>0</td>
-        <td>11.0</td>
+        <td>14.1</td>
       </tr>
       
       <tr>
@@ -364,7 +364,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         9.3
+         11.0
        </span>
     </span> hits/line)
   </h2>
@@ -396,7 +396,7 @@
         <td>3</td>
         <td>3</td>
         <td>0</td>
-        <td>9.3</td>
+        <td>11.0</td>
       </tr>
       
     </tbody>
@@ -1191,20 +1191,20 @@
           <code class="ruby">    # @jobs = Job.where(&quot;updated_at &lt; ADDDATE(NOW(), 90)&quot;).order(updated_at: :desc).all</code>
         </li>
       
-        <li class="covered" data-hits="26" data-linenumber="4">
-          <span class="hits">26</span>
+        <li class="covered" data-hits="31" data-linenumber="4">
+          <span class="hits">31</span>
           
           <code class="ruby">    @jobs = Job.order(updated_at: :desc).all</code>
         </li>
       
-        <li class="covered" data-hits="26" data-linenumber="5">
-          <span class="hits">26</span>
+        <li class="covered" data-hits="31" data-linenumber="5">
+          <span class="hits">31</span>
           
           <code class="ruby">    @companies = Company.all</code>
         </li>
       
-        <li class="covered" data-hits="26" data-linenumber="6">
-          <span class="hits">26</span>
+        <li class="covered" data-hits="31" data-linenumber="6">
+          <span class="hits">31</span>
           
           <code class="ruby">    @categories = Category.all</code>
         </li>
@@ -1287,8 +1287,8 @@
           <code class="ruby">  def index</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="9">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="6" data-linenumber="9">
+          <span class="hits">6</span>
           
           <code class="ruby">    @jobs = Job.order(updated_at: :desc).all</code>
         </li>
@@ -1581,8 +1581,8 @@
           <code class="ruby">  def get_job</code>
         </li>
       
-        <li class="covered" data-hits="10" data-linenumber="58">
-          <span class="hits">10</span>
+        <li class="covered" data-hits="12" data-linenumber="58">
+          <span class="hits">12</span>
           
           <code class="ruby">    @job = Job.find(params[:id])</code>
         </li>
@@ -1665,8 +1665,8 @@
           <code class="ruby">  def get_job_search</code>
         </li>
       
-        <li class="covered" data-hits="26" data-linenumber="3">
-          <span class="hits">26</span>
+        <li class="covered" data-hits="31" data-linenumber="3">
+          <span class="hits">31</span>
           
           <code class="ruby">    @search = Job.new</code>
         </li>
@@ -1845,8 +1845,8 @@
           <code class="ruby">  def expired?</code>
         </li>
       
-        <li class="covered" data-hits="71" data-linenumber="8">
-          <span class="hits">71</span>
+        <li class="covered" data-hits="93" data-linenumber="8">
+          <span class="hits">93</span>
           
           <code class="ruby">    Time.zone.now &gt;= (updated_at + DAYS_EXPIRED.days)</code>
         </li>
