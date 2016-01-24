@@ -13,7 +13,7 @@ Things I'm planning to do
 - Tests to check validation on forms - OK
 - Expire jobs that not was updated in 90 days - OK
 - Search on Jobs - OK
-- When user is logged show option to edit jobs, categories and companies when it is showing. Ex.: job_path(job)
+- When user is logged show option to edit jobs, categories and companies when it is showing. Ex.: job_path(job) - OK
 - Order Jobs from last to first - OK
 
 Could do better at the end of the Project
