@@ -1,6 +1,6 @@
 <%= form_for get_job_search, url: {action: "search", :controller=>"jobs"}, html: {class: 'navbar-form navbar-right'} do |f| %>
 <div class="form-group">
-  <%= f.label :title %>
+  <%= f.label :title, class: 'hidden' %>
   <%= f.text_field :title, class: 'form-control' %>
 </div>
 <div class="form-group">

@@ -12,7 +12,7 @@
       "/home/ubuntu/Documents/workspace/rails/project-jobs/app/helpers/application_helper.rb": [
         1,
         1,
-        21,
+        22,
         null,
         null
       ],
@@ -162,7 +162,7 @@
         1,
         null,
         1,
-        2,
+        3,
         null,
         null,
         1,
@@ -198,7 +198,6 @@
         null,
         1,
         1,
-        null,
         1,
         null,
         null,
@@ -225,13 +224,13 @@
       "/home/ubuntu/Documents/workspace/rails/project-jobs/app/controllers/home_controller.rb": [
         1,
         1,
-        21,
-        21,
-        21,
+        22,
+        22,
+        22,
         null,
         null
       ]
     },
-    "timestamp": 1453637265
+    "timestamp": 1453638353
   }
 }
