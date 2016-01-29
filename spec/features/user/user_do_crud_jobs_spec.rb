@@ -32,6 +32,7 @@ feature 'User do CRUD on jobs' do
     fill_in 'job[description]', with: job.description
     select company.name,        from: 'job[company_id]'
     select category.name,       from: 'job[category_id]'
+    select job.contract,        from: 'job[contract]'
 
     click_on 'submit'
 
@@ -40,6 +41,7 @@ feature 'User do CRUD on jobs' do
     expect(page).to have_content job.description
     expect(page).to have_content job.company.name
     expect(page).to have_content job.category.name
+    expect(page).to have_content job.contract
   end
 
   scenario 'user update job' do
@@ -58,6 +60,7 @@ feature 'User do CRUD on jobs' do
     fill_in 'job[description]', with: job.description
     select company.name,        from: 'job[company_id]'
     select category.name,       from: 'job[category_id]'
+    select job.contract,        from: 'job[contract]'
 
     click_on 'submit'
 
@@ -66,6 +69,7 @@ feature 'User do CRUD on jobs' do
     expect(page).to have_content job.description
     expect(page).to have_content job.company.name
     expect(page).to have_content job.category.name
+    expect(page).to have_content job.contract
   end
 
   scenario 'user try to create an invalid job' do

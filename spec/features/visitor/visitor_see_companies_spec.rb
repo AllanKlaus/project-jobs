@@ -39,6 +39,7 @@ feature 'Visitor see companies' do
     expect(page).to have_content job.title
     expect(page).to have_content job.company.name
     expect(page).to have_content job.location
+    expect(page).to have_content job.contract
   end
 
 end

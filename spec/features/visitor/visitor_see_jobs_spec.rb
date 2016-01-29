@@ -34,6 +34,7 @@ feature 'Visitor see jobs' do
     expect(page).to have_content job.location
     expect(page).to have_content job.category.name
     expect(page).to have_content job.company.name
+    expect(page).to have_content job.contract
   end
 
   scenario 'see job on company page' do
@@ -48,6 +49,7 @@ feature 'Visitor see jobs' do
     expect(page).to have_content job.title
     expect(page).to have_content job.category.name
     expect(page).to have_content job.location
+    expect(page).to have_content job.contract
   end
 
   scenario 'see job on category page' do
@@ -61,6 +63,7 @@ feature 'Visitor see jobs' do
     expect(page).to have_content job.title
     expect(page).to have_content job.company.name
     expect(page).to have_content job.location
+    expect(page).to have_content job.contract
   end
 
 end
