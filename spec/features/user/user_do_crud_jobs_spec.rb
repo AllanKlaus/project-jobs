@@ -17,9 +17,9 @@ feature 'User do CRUD on jobs' do
   end
 
   scenario 'user create jobs' do
-    login_user
+    user = login_user
 
-    company = create_company
+    company = create_company(user: user)
     job = create_job(company: company)
 
     visit new_job_path
@@ -43,7 +43,9 @@ feature 'User do CRUD on jobs' do
   end
 
   scenario 'user update job' do
-    login_user
+    user = login_user
+
+    company = create_company(user: user)
 
     company = create_company
     job = create_job(company: company)

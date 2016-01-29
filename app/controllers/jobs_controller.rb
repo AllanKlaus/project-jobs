@@ -56,7 +56,7 @@ class JobsController < ApplicationController
 
   def get_references
     @categories = Category.all
-    @companies = Company.all
+    @companies = current_user.companies
     @contracts = Job::CONTRACT_TYPE
   end
 
