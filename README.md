@@ -15,6 +15,8 @@ Things I'm planning to do
 - Search on Jobs - OK
 - When user is logged show option to edit jobs, categories and companies when it is showing. Ex.: job_path(job) - OK
 - Order Jobs from last to first - OK
+- Implements Responders - OK
+- Implements Presenters - OK
 
 Could do better at the end of the Project
 - On "remove" expired jobs from views SHOULD use where on controller to get only not expired, SQLITE don't have a function like ADDATE (MySQL) to filter it on where, in this project I used only a if to see.
@@ -24,6 +26,7 @@ Doubts I had during the project
 - 2- Locals var in render isn't passing on companies_path, company_path, categories_path, category_path (commented on code)
 - 3- How to put form_for in layouts/application.html.erb
 - 4- I tryed to create contract route like a member of jobs, but it didn't work cause I tryedto pass a params on member how can I do it?
+- 5- How to user user_signed_in? (devise method) on model
 
 Response
 - 1- You can use Macros to DRY on Rspec,the methods (have_content, click_on, etc) work fine.

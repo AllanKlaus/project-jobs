@@ -9,7 +9,7 @@ class JobsController < ApplicationController
   respond_to :html
 
   def index
-    @jobs = Job.order(updated_at: :desc).all
+    @jobs = JobPresenter.new(Job.order(updated_at: :desc).all)
   end
 
   def show
@@ -43,6 +43,7 @@ class JobsController < ApplicationController
   end
 
   private
+
   def jobs_params
     params.require(:job).permit(:title, :location, :description, :category_id, :company_id)
   end
@@ -52,7 +53,7 @@ class JobsController < ApplicationController
   end
 
   def get_job
-    @job = Job.find(params[:id])
+    @job = JobPresenter.new(Job.find(params[:id]))
   end
 
   def job_owner

@@ -1,8 +1,6 @@
 <div class="job width100P">
   <h2><%= job.title %></h2>
-  <% if job.expired? %>
-    <p class="text-left"><strong>Job Expired</strong></p>
-  <% end %>
+  <%= job.is_expired %>
   <% if user_signed_in? %>
     <p><%= link_to "Edit", edit_job_path(job), class: 'btn btn-primary' %></p>
   <% end %>
