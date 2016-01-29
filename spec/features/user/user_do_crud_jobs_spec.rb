@@ -21,7 +21,7 @@ feature 'User do CRUD on jobs' do
 
     category = create_category
     company = create_company
-    job = create_job(company: company, category: category)
+    job = create_job(company: company, category: category, contract: 'CLT')
 
     visit new_job_path
 
@@ -41,7 +41,6 @@ feature 'User do CRUD on jobs' do
     expect(page).to have_content job.description
     expect(page).to have_content job.company.name
     expect(page).to have_content job.category.name
-    expect(page).to have_content job.contract
   end
 
   scenario 'user update job' do
