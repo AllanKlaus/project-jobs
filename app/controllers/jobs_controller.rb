@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
   before_action :get_job, only: [:show, :edit, :update]
+  before_action :job_owner, only: [:edit, :update]
   before_action :get_references, only: [:new, :create, :edit, :update]
 
   skip_before_filter :verify_authenticity_token, only: [:search]
@@ -52,6 +53,13 @@ class JobsController < ApplicationController
 
   def get_job
     @job = Job.find(params[:id])
+  end
+
+  def job_owner
+    if @job.company.user != current_user
+      flash[:warning] = 'Warning: You can only edit your jobs'
+      redirect_to root_path
+    end
   end
 
   def get_references

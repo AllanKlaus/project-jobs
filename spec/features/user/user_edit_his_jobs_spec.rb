@@ -5,8 +5,6 @@ feature 'User do CRUD on jobs' do
     user = login_user
 
     company = create_company(user: user)
-
-    company = create_company
     job = create_job(company: company)
 
     visit edit_job_path(job)
