@@ -9,9 +9,7 @@ feature 'User access blocked categorys options' do
   end
 
   scenario 'user unlogged access update category' do
-    category = create_category
-
-    visit edit_category_path(category)
+    visit edit_category_path(create_category)
 
     expect(page).to have_content "Log in"
   end

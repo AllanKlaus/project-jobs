@@ -9,9 +9,7 @@ feature 'User access blocked company options' do
   end
 
   scenario 'user unlogged access update company' do
-    company = create_company
-
-    visit edit_company_path(company)
+    visit edit_company_path(create_company)
 
     expect(page).to have_content "Log in"
   end

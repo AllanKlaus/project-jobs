@@ -5,12 +5,7 @@ feature 'User add photo to company' do
   scenario 'user create companies with photo' do
     login_user
 
-    company = Company.create(
-    name: "Creating Company",
-    location: 'Guarujá',
-    mail: 'created@mail.com',
-    phone: '(13) 3322-2233'
-    )
+    company = create_company
     visit new_company_path
 
     fill_in 'company[name]', with: company.name
@@ -31,12 +26,7 @@ feature 'User add photo to company' do
   scenario 'user update company with photo' do
     login_user
 
-    company = Company.create(
-    name: "Creating Company",
-    location: 'Guarujá',
-    mail: 'created@mail.com',
-    phone: '(13) 3322-2233'
-    )
+    company = create_company
 
     visit edit_company_path(company)
 

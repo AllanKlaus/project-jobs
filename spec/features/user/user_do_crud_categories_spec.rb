@@ -2,22 +2,18 @@ require 'rails_helper'
 
 feature 'User do CRUD on categories' do
   scenario 'user read categories' do
-
-    category = Category.create(
-    name: "Reading Category"
-    )
+    category = create_category
 
     visit category_path(category)
 
-    expect(page).to have_content "Reading Category"
+    expect(page).to have_content category.name
   end
 
   scenario 'user create categories' do
     login_user
 
-    category = Category.create(
-    name: "Creating Category"
-    )
+    category = create_category
+
     visit new_category_path
 
     expect(page).to have_content 'Create Category'
@@ -32,9 +28,7 @@ feature 'User do CRUD on categories' do
   scenario 'user update category' do
     login_user
 
-    category = Category.create(
-    name: "Creating Category"
-    )
+    category = create_category
 
     visit edit_category_path(category)
 

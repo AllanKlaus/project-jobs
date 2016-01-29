@@ -4,9 +4,7 @@ feature 'User see button to edit jobs' do
   scenario 'logged user on home' do
     login_user
 
-    5.times do |job|
-      create_job(nil, nil, job)
-    end
+    create_job
 
     visit root_path
 
@@ -14,9 +12,7 @@ feature 'User see button to edit jobs' do
   end
 
   scenario 'unlogged user on home' do
-    5.times do |job|
-      create_job(nil, nil, job)
-    end
+    create_job
 
     visit root_path
 
@@ -26,9 +22,7 @@ feature 'User see button to edit jobs' do
   scenario 'logged user on jobs' do
     login_user
 
-    5.times do |job|
-      create_job(nil, nil, job)
-    end
+    create_job
 
     visit jobs_path
 
@@ -36,9 +30,7 @@ feature 'User see button to edit jobs' do
   end
 
   scenario 'unlogged user on jobs' do
-    5.times do |job|
-      create_job(nil, nil, job)
-    end
+    create_job
 
     visit jobs_path
 
@@ -48,7 +40,7 @@ feature 'User see button to edit jobs' do
   scenario 'logged user on job' do
     login_user
 
-    job = create_job(nil, nil, 5)
+    job = create_job
 
     visit job_path(job)
 
@@ -56,7 +48,7 @@ feature 'User see button to edit jobs' do
   end
 
   scenario 'unlogged user on job' do
-    job = create_job(nil, nil, 5)
+    job = create_job
 
     visit job_path(job)
 

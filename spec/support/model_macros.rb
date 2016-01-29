@@ -1,24 +1,22 @@
 module ModelsMacros
-  def create_company(number = nil)
-    Company.create(name: "Creating Company #{number}",
+  def create_company(attrs = {})
+    Company.create({name: "Creating Company",
     location: 'Guarujá',
     phone: '11 2369 3476',
-    mail: "created#{number}@mail.com")
+    mail: "mail@mail.com"}.merge(attrs))
   end
 
-  def create_category(number = nil)
-    Category.create(name: "Category #{number}")
+  def create_category(attrs = {})
+    Category.create({name: "Creating Category"}.merge(attrs))
   end
 
-  def create_job(company = nil, category = nil, number = nil)
-    company ||= create_company(number)
-    category ||= create_category(number)
-    company.jobs.create(
-    title: "Macro Job #{number}",
+  def create_job(attrs = {})
+    attrs[:company] ||= create_company
+    attrs[:category] ||= create_category
+    Job.create({
+    title: "Macro Job",
     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    location: 'São Paulo - SP',
-    category: category
-    )
+    location: 'São Paulo - SP'}.merge(attrs))
   end
 
   def login_user

@@ -22,19 +22,19 @@ feature 'User see options to sign ' do
   scenario 'user update job' do
     login_user
 
-    category = create_category(5)
-    company = create_company(10)
-    job = create_job(company, category)
+    category = create_category
+    company = create_company
+    job = create_job({company: company, category: category})
 
     visit edit_job_path(job)
 
     expect(page).to have_content 'Edit Job'
 
-    fill_in 'job[title]', with: job.title
-    fill_in 'job[location]', with: job.location
+    fill_in 'job[title]',       with: job.title
+    fill_in 'job[location]',    with: job.location
     fill_in 'job[description]', with: job.description
-    select company.name, from: 'job[company_id]'
-    select category.name, from: 'job[category_id]'
+    select company.name,        from: 'job[company_id]'
+    select category.name,       from: 'job[category_id]'
 
     click_on 'submit'
 

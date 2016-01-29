@@ -9,9 +9,7 @@ feature 'User access blocked jobs options' do
   end
 
   scenario 'user unlogged access update job' do
-    job = create_job
-
-    visit edit_job_path(job)
+    visit edit_job_path(create_job)
 
     expect(page).to have_content "Log in"
   end
