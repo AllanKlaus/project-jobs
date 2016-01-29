@@ -16,6 +16,8 @@ gem "paperclip", "~> 4.3"
 
 gem 'bootstrap-sass', '~> 3.3.6'
 
+gem 'responders'
+
 group :development, :test do
   gem 'sqlite3'
   gem 'byebug',      '3.4.0'

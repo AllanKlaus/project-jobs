@@ -2,6 +2,8 @@ class CategoriesController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update]
   before_action :get_category, only: [:show, :edit, :update]
 
+  respond_to :html
+
   def index
     @categories = Category.all
   end
@@ -14,27 +16,16 @@ class CategoriesController < ApplicationController
   end
 
   def create
-    @category = Category.new(companies_params)
-    if @category.save()
-      flash[:success] = 'Success: Category created successfully'
-      redirect_to @category
-    else
-      flash[:warning] = 'Warning: All fields are necessary'
-      render :new
-    end
+    @category = Category.create(companies_params)
+    respond_with @category
   end
 
   def edit
   end
 
   def update
-    if @category.update(companies_params)
-      flash[:success] = 'Success: Category updated successfully'
-      redirect_to @category
-    else
-      flash[:warning] = 'Warning: All fields are necessary'
-      render :edit
-    end
+    @category.update(companies_params)
+    respond_with @category
   end
 
   private

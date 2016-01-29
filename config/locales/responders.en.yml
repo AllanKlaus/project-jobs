@@ -1,0 +1,24 @@
+en:
+  flash:
+    actions:
+      create:
+        notice: '%{resource_name} was successfully created.'
+        alert: 'Warning: All fields are necessary'
+      update:
+        notice: '%{resource_name} was successfully updated.'
+        alert: 'Warning: All fields are necessary'
+        warning_companies: 'Warning: All fields are necessary'
+      destroy:
+        notice: '%{resource_name} was successfully destroyed.'
+        alert: '%{resource_name} could not be destroyed.'
+
+    categories:
+      create:
+        notice: '%{resource_name} was successfully created.'
+      update:
+        notice: '%{resource_name} was successfully updated.'
+        # alert: '%{resource_name} could not be updated.'
+        alert: 'Warning: All fields are necessary'
+      destroy:
+        notice: '%{resource_name} was successfully destroyed.'
+        alert: '%{resource_name} could not be destroyed.'

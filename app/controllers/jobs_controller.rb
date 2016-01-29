@@ -5,6 +5,8 @@ class JobsController < ApplicationController
 
   skip_before_filter :verify_authenticity_token, only: [:search]
 
+  respond_to :html
+
   def index
     @jobs = Job.order(updated_at: :desc).all
   end
@@ -17,27 +19,16 @@ class JobsController < ApplicationController
   end
 
   def create
-    @job = Job.new(jobs_params)
-    if @job.save()
-      flash[:success] = 'Success: Job created successfully'
-      redirect_to @job
-    else
-      flash[:warning] = 'Warning: All fields are necessary'
-      render :new
-    end
+    @job = Job.create(jobs_params)
+    respond_with @job
   end
 
   def edit
   end
 
   def update
-    if @job.update(jobs_params)
-      flash[:success] = 'Success: Job updated successfully'
-      redirect_to @job
-    else
-      flash[:warning] = 'Warning: All fields are necessary'
-      render :edit
-    end
+    @job.update(jobs_params)
+    respond_with @job
   end
 
   def search
