@@ -1,0 +1,14 @@
+<span class="error_message"><%= flash[:warning] %></span>
+<div class="row">
+  <aside class="col-sm-4">
+    <h2>Side Menu</h2>
+    <h3>Filter Categories</h3>
+    <%= render partial: "side_menu", collection: @categories, as: :item %>
+    <h3>Filter Companies</h3>
+    <%= render partial: "side_menu", collection: @companies, as: :item %>
+  </aside>
+  <section class="col-sm-8">
+    <h1>Recent Jobs</h1>
+    <%= render @jobs %>
+  </section>
+</div>

@@ -14,9 +14,9 @@ feature 'User access his dashboard' do
 
     hidden_company  = create_company(name: "Hidden Company")
     hidden_category = create_category(name: "Hidden Category")
-    hidden_job = create_job({company: hidden_company, category: hidden_category})
+    hidden_job = create_job({company: hidden_company, category: hidden_category, title: 'Hidden Job'})
 
-    visit dashboard_path
+    visit dashboard_index_path
 
     2.times do |number|
       expect(page).to have_content companies[number].name
@@ -30,7 +30,7 @@ feature 'User access his dashboard' do
   end
 
   scenario 'unsuccessfully' do
-    visit dashboard_path
+    visit dashboard_index_path
     expect(page).to have_content "Log in"
   end
 end
