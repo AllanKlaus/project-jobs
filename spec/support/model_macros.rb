@@ -30,6 +30,8 @@ module ModelsMacros
         fill_in 'user[password]', with: set_password
 
         click_on 'Log in'
+
+        user
       end
 
       def create_user
