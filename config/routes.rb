@@ -5,11 +5,12 @@ Rails.application.routes.draw do
 
   resources :companies, except: [:destroy]
   resources :categories, except: [:destroy]
-  resources :jobs, except: [:destroy]do
+  resources :jobs, except: [:destroy] do
     collection do
       post 'search'
     end
   end
+  get 'contract/:contract' => 'jobs#contracts', as: :contracts
 
 # The priority is based upon order of creation: first created -> highest priority.
 # See how all your routes lay out with "rake routes".

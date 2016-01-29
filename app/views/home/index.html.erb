@@ -7,6 +7,14 @@
     <%= render partial: "side_menu", collection: @categories, as: :item %>
     <h3>Companies</h3>
     <%= render partial: "side_menu", collection: @companies, as: :item %>
+    <h3>Contract Type</h3>
+    <ul class="nav nav-pills nav-stacked stack-drops">
+      <% @contracts.each do |contract| %>
+        <li class="nav-item-1">
+          <%= link_to contract, contracts_path(contract) %>
+        </li>
+      <% end %>
+    </ul>
   </aside>
   <section class="col-sm-8">
     <h1>Recent Jobs</h1>

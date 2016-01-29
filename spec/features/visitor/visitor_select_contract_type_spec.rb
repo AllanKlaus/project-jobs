@@ -16,7 +16,6 @@ feature 'Visitor select contract type' do
     end
 
     visit root_path
-
     click_on Job::CONTRACT_TYPE.first
 
     expect(page).to have_content jobs[0].title

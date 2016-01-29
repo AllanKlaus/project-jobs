@@ -36,6 +36,11 @@ class JobsController < ApplicationController
     render :index
   end
 
+  def contracts
+    @jobs = Job.where(contract: params[:contract])
+    render :index
+  end
+
   private
   def jobs_params
     params.require(:job).permit(:title, :location, :description, :category_id, :company_id)

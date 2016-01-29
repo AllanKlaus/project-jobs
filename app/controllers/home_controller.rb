@@ -3,5 +3,6 @@ class HomeController < ApplicationController
     @jobs = Job.order(updated_at: :desc).all
     @companies = Company.all
     @categories = Category.all
+    @contracts = Job::CONTRACT_TYPE
   end
 end
