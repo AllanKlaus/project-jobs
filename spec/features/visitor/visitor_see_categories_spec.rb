@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Visitor see categories' do
   scenario 'see categories on home' do
     5.times do |number|
-      create_category(number)
+      create_category(name: "Category #{number}")
     end
 
     visit root_path
@@ -15,7 +15,7 @@ feature 'Visitor see categories' do
 
   scenario 'see categories page' do
     5.times do |number|
-      create_category(number)
+      create_category(name: "Category #{number}")
     end
 
     visit categories_path
@@ -26,8 +26,8 @@ feature 'Visitor see categories' do
   end
 
   scenario 'see category and job on category page' do
-    category = create_category(5)
-    job = create_job(nil, category, 10)
+    category = create_category
+    job = create_job(category: category)
 
     visit category_path(category)
 

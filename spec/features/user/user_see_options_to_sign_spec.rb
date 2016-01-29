@@ -24,7 +24,7 @@ feature 'User see options to sign ' do
 
     category = create_category
     company = create_company
-    job = create_job({company: company, category: category})
+    job = create_job(company: company, category: category)
 
     visit edit_job_path(job)
 

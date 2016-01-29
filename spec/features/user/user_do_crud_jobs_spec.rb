@@ -21,7 +21,7 @@ feature 'User do CRUD on jobs' do
 
     category = create_category
     company = create_company
-    job = create_job({company: company, category: category})
+    job = create_job(company: company, category: category)
 
     visit new_job_path
 
@@ -47,7 +47,7 @@ feature 'User do CRUD on jobs' do
 
     category = create_category
     company = create_company
-    job = create_job({company: company, category: category})
+    job = create_job(company: company, category: category)
 
     visit edit_job_path(job)
 

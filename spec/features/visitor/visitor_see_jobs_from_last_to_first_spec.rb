@@ -3,7 +3,7 @@ require 'rails_helper'
 feature 'Visitor see jobs from last to first' do
   scenario 'on home' do
     5.times do |number|
-      create_job(nil, nil, number)
+      create_job(title: "Macro Job #{number}")
     end
 
     visit root_path
@@ -19,7 +19,7 @@ feature 'Visitor see jobs from last to first' do
 
   scenario 'on jobs index' do
     5.times do |number|
-      create_job(nil, nil, number)
+      create_job(title: "Macro Job #{number}")
     end
 
     visit jobs_path
