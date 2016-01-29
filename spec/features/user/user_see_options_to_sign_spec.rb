@@ -33,7 +33,7 @@ feature 'User see options to sign ' do
     fill_in 'job[location]',    with: job.location
     fill_in 'job[description]', with: job.description
     select company.name,        from: 'job[company_id]'
-    select job.category.name,       from: 'job[category_id]'
+    select job.category.name,   from: 'job[category_id]'
 
     click_on 'submit'
 
