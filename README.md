@@ -23,8 +23,10 @@ Doubts I had during the project
 - 1- How to DRY on Rspec, using methods of Rspec
 - 2- Locals var in render isn't passing on companies_path, company_path, categories_path, category_path (commented on code)
 - 3- How to put form_for in layouts/application.html.erb
+- 4- I tryed to create contract route like a member of jobs, but it didn't work cause I tryedto pass a params on member how can I do it?
 
 Response
 - 1- You can use Macros to DRY on Rspec,the methods (have_content, click_on, etc) work fine.
 - 2- ?
 - 3- ?
+- 4- ?
