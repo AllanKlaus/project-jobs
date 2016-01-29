@@ -12,10 +12,7 @@ module ModelsMacros
     end
 
     def create_job(attrs = {})
-      attrs[:user] ||= create_user
-      attr_company[:user] = attrs[:user]
-      attrs.delete[:user]
-      attrs[:company] ||= create_company(attr_company)
+      attrs[:company] ||= create_company
       attrs[:category] ||= create_category
       Job.create({
         title: "Macro Job",
