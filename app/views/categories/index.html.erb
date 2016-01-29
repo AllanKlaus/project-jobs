@@ -1,7 +1,10 @@
 <div class="row">
   <section class="col-sm-12">
     <h1>Categories</h1>
-    <!-- <%= render partial: "category", collection: @categories, locals: {css: 'col-sm-4'} %> -->
-    <%= render @categories %>
+    <% if !@categories.empty? %>
+        <%= render @categories %>
+    <% else %>
+        <%= controller_empty('categories') %>
+    <% end %>
   </section>
 </div>

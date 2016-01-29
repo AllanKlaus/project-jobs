@@ -17,6 +17,10 @@
   </aside>
   <section class="col-sm-8">
     <h1>Recent Jobs</h1>
-    <%= render @jobs %>
+    <% if !@jobs.empty? %>
+        <%= render @jobs %>
+    <% else %>
+        <%= controller_empty('jobs') %>
+    <% end %>
   </section>
 </div>
