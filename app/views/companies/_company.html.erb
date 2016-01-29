@@ -1,6 +1,7 @@
 <div class="col-sm-4 text-center company">
   <p><%= image_tag company.photo.url(:thumb) %></p>
-  <p><%= company.name %></p>
+  <p><strong><%= company.name %></strong></p>
+  <p>Published <%= company.jobs.count %> jobs</p>
   <p><%= company.location %></p>
   <p><%= company.mail %></p>
   <p><%= company.phone %></p>
